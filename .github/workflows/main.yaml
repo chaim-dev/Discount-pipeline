@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          dockerfile: Dockerfile
+          dockerfile: docker/Dockerfile # Indique le bon chemin ici
           push: false
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/discount-pipeline:latest-${{ github.run_number }}
 
@@ -45,6 +45,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          dockerfile: Dockerfile
+          dockerfile: docker/Dockerfile # Indique le bon chemin ici
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/discount-pipeline:latest-${{ github.run_number }}
